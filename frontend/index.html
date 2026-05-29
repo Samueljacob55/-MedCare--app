@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Smart Healthcare Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MediCare</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active" onclick="showSection('book')">
+                    <i class="fas fa-calendar-plus"></i> Book
+                </button>
+                <button class="nav-btn" onclick="showSection('services')">
+                    <i class="fas fa-stethoscope"></i> Services
+                </button>
+                <button class="nav-btn" onclick="showSection('prescription')">
+                    <i class="fas fa-file-prescription"></i> Prescription
+                </button>
+                <button class="nav-btn" onclick="showSection('timings')">
+                    <i class="fas fa-clock"></i> Timings
+                </button>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span>Patient Portal</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="animate-text">
+                <span class="gradient-text">Your Health</span><br>
+                Our Priority
+            </h1>
+            <p class="hero-subtitle">Book appointments with top doctors, get prescriptions online, and manage your health seamlessly.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Expert Doctors</p>
+                </div>
+                <div class="stat">
+                    <h3>1000+</h3>
+                    <p>Happy Patients</p>
+                </div>
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card">
+                <i class="fas fa-ambulance"></i>
+                <p>Emergency Care</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Book Appointment Section -->
+        <section id="book" class="section active-section">
+            <div class="section-header">
+                <i class="fas fa-calendar-check"></i>
+                <h2>Book an Appointment</h2>
+                <p>Schedule your visit with our specialist doctors</p>
+            </div>
+            
+            <div class="booking-grid">
+                <div class="booking-form-card">
+                    <form id="appointmentForm" class="modern-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="patientName" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="patientEmail" placeholder="your@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="patientPhone" placeholder="+1234567890" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-user-md"></i> Select Doctor</label>
+                            <select id="doctor" required>
+                                <option value="">Choose a doctor</option>
+                                <option value="Dr. Smith">👨‍⚕️ Dr. Smith - Cardiologist</option>
+                                <option value="Dr. Johnson">🧠 Dr. Johnson - Neurologist</option>
+                                <option value="Dr. Williams">👶 Dr. Williams - Pediatrician</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar"></i> Date</label>
+                                <input type="date" id="appointmentDate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label><i class="fas fa-clock"></i> Time</label>
+                                <input type="time" id="appointmentTime" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check-circle"></i> Book Appointment
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="booking-info">
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Booking</h3>
+                        <p>Your information is encrypted and secure</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-bell"></i>
+                        <h3>Reminders</h3>
+                        <p>Get SMS/Email reminders before appointment</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Easy Payment</h3>
+                        <p>Pay online or at clinic</p>
+                    </div>
+                </div>
+            </div>
+            <div id="bookingMessage"></div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="section-header">
+                <i class="fas fa-stethoscope"></i>
+                <h2>Our Medical Services</h2>
+                <p>Comprehensive healthcare services at affordable prices</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Complete heart care, ECG, Stress Test, and Cardiac Consultation</p>
+                    <div class="service-price">$150</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Brain scans, Memory tests, Migraine treatment, Nerve disorders</p>
+                    <div class="service-price">$200</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Child vaccination, Growth monitoring, Development assessment</p>
+                    <div class="service-price">$100</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h3>Pulmonology</h3>
+                    <p>Respiratory care, Asthma treatment, Lung function tests</p>
+                    <div class="service-price">$180</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Bone care, Joint replacement, Sports injury treatment</p>
+                    <div class="service-price">$170</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+                
+                <div class="service-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Ophthalmology</h3>
+                    <p>Eye exams, Vision correction, Cataract surgery</p>
+                    <div class="service-price">$120</div>
+                    <button class="service-btn" onclick="showSection('book')">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prescription Section -->
+        <section id="prescription" class="section">
+            <div class="section-header">
+                <i class="fas fa-file-prescription"></i>
+                <h2>Download Prescription</h2>
+                <p>Access your prescriptions anytime, anywhere</p>
+            </div>
+            
+            <div class="prescription-container">
+                <div class="prescription-search-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Enter Appointment ID</h3>
+                    <form id="prescriptionForm">
+                        <input type="text" id="prescriptionId" placeholder="e.g., 1234567890" required>
+                        <button type="submit">
+                            <i class="fas fa-download"></i> Get Prescription
+                        </button>
+                    </form>
+                </div>
+                <div id="prescriptionDetails"></div>
+            </div>
+        </section>
+
+        <!-- Timings Section -->
+        <section id="timings" class="section">
+            <div class="section-header">
+                <i class="fas fa-clock"></i>
+                <h2>Doctor Timings</h2>
+                <p>Check availability of our specialist doctors</p>
+            </div>
+            
+            <div class="timings-container">
+                <div class="timings-card">
+                    <div class="doctor-tag">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Dr. Smith</h3>
+                        <span>Cardiologist</span>
+                    </div>
+                    <div class="timings-grid">
+                        <div class="day-slot"><span>Monday</span><strong>9:00 - 17:00</strong></div>
+                        <div class="day-slot"><span>Tuesday</span><strong>9:00 - 17:00</strong></div>
+                        <div class="day-slot"><span>Wednesday</span><strong>9:00 - 17:00</strong></div>
+                        <div class="day-slot"><span>Thursday</span><strong>9:00 - 17:00</strong></div>
+                        <div class="day-slot"><span>Friday</span><strong>9:00 - 17:00</strong></div>
+                        <div class="day-slot"><span>Saturday</span><strong>10:00 - 14:00</strong></div>
+                        <div class="day-slot"><span>Sunday</span><strong>Closed</strong></div>
+                    </div>
+                </div>
+                
+                <div class="timings-card">
+                    <div class="doctor-tag">
+                        <i class="fas fa-brain"></i>
+                        <h3>Dr. Johnson</h3>
+                        <span>Neurologist</span>
+                    </div>
+                    <div class="timings-grid">
+                        <div class="day-slot"><span>Monday</span><strong>10:00 - 18:00</strong></div>
+                        <div class="day-slot"><span>Tuesday</span><strong>10:00 - 18:00</strong></div>
+                        <div class="day-slot"><span>Wednesday</span><strong>10:00 - 18:00</strong></div>
+                        <div class="day-slot"><span>Thursday</span><strong>10:00 - 18:00</strong></div>
+                        <div class="day-slot"><span>Friday</span><strong>10:00 - 18:00</strong></div>
+                        <div class="day-slot"><span>Saturday</span><strong>Closed</strong></div>
+                        <div class="day-slot"><span>Sunday</span><strong>Closed</strong></div>
+                    </div>
+                </div>
+                
+                <div class="timings-card">
+                    <div class="doctor-tag">
+                        <i class="fas fa-baby"></i>
+                        <h3>Dr. Williams</h3>
+                        <span>Pediatrician</span>
+                    </div>
+                    <div class="timings-grid">
+                        <div class="day-slot"><span>Monday</span><strong>8:00 - 16:00</strong></div>
+                        <div class="day-slot"><span>Tuesday</span><strong>8:00 - 16:00</strong></div>
+                        <div class="day-slot"><span>Wednesday</span><strong>8:00 - 16:00</strong></div>
+                        <div class="day-slot"><span>Thursday</span><strong>8:00 - 16:00</strong></div>
+                        <div class="day-slot"><span>Friday</span><strong>8:00 - 16:00</strong></div>
+                        <div class="day-slot"><span>Saturday</span><strong>9:00 - 13:00</strong></div>
+                        <div class="day-slot"><span>Sunday</span><strong>Closed</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-heartbeat"></i> MediCare</h4>
+                <p>Your trusted healthcare partner for quality medical services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showSection('book')">Book Appointment</a>
+                <a href="#" onclick="showSection('services')">Our Services</a>
+                <a href="#" onclick="showSection('prescription')">Prescriptions</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                <p><i class="fas fa-envelope"></i> support@medicare.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MediCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
